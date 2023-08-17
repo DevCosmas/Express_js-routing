@@ -1,10 +1,10 @@
 const express = require('express');
+const path = require('path');
 const reqMethod = require('./reqMethod');
 const app = express();
 const PORT = 3000;
 const HOSTNAME = 'localhost';
-
-// app.use(public);
+app.use('/static', express.static(path.join(__dirname, 'public')));
 app.get('/get', (req, res) => {
   reqMethod.getAll(req, res);
 });
