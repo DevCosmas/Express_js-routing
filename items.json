@@ -1,0 +1,5 @@
+[
+  { "Name": "Dell", "Price": "$1000", "Size": "medium", "id": 2 },
+  { "Name": "Hp", "Price": "$850", "Size": "Big", "id": 3 },
+  { "Name": "MacOs", "Price": "$2850", "Size": "medium", "id": 4 }
+]

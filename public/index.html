@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      overflow-y: hidden;
+    }
+    html {
+      font-size: 62.5%;
+    }
+    body {
+      padding-top: 10%;
+      height: 100vh;
+      background-image: linear-gradient(
+        to right top,
+        rgb(0, 0, 0),
+        rgba(167, 160, 160, 0.4) 60%
+      );
+    }
+    .card--container {
+      width: 30%;
+      min-height: 40rem;
+      margin: 0 auto;
+      box-sizing: border-box;
+      position: relative;
+      overflow-x: hidden;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url(/public/devThug.jpg);
+    }
+    .info {
+      width: 100%;
+      height: 40rem;
+      padding: 2rem 1.5rem 0 2rem;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      color: #ffff;
+      background-color: #000;
+      opacity: 0.5;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      text-transform: capitalize;
+      letter-spacing: 0.1rem;
+    }
+    .Disp {
+      width: 80%;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      display: none;
+    }
+    .Disp--h2 {
+      font-size: 2.5rem;
+      text-align: left;
+      padding-bottom: 1.5rem;
+      text-decoration: underline;
+      text-transform: uppercase;
+      letter-spacing: 2rem;
+    }
+    .Disp--p {
+      font-size: 2rem;
+      text-transform: capitalize;
+      font-family: sans-serif;
+      padding-top: 0.5rem;
+      letter-spacing: 0.2rem;
+    }
+    a {
+      display: block;
+      color: #ffffff;
+      margin-top: 5rem;
+      font-size: 1.8rem;
+      font-weight: 800;
+      cursor: pointer;
+      text-transform: capitalize;
+      letter-spacing: 0.2rem;
+    }
+    .info:hover,
+    .info:hover .Disp {
+      display: block;
+      opacity: 0.9;
+    }
+    .info:hover a {
+      color: orangered;
+    }
+  </style>
+  <body>
+    <div class="card--container">
+      <div class="info">
+        <h2>ugwucosmas chibuike</h2>
+        <p>backend developer<sup>Tm</sup></p>
+        <div class="Disp">
+          <h2 class="Disp--h2">skills</h2>
+          <p class="Disp--p">html & css</p>
+          <p class="Disp--p">javascript</p>
+          <p class="Disp--p">node.js & express.js</p>
+          <p class="Disp--p">MongoDb</p>
+        </div>
+        <a href="#">more details</a>
+      </div>
+    </div>
+  </body>
+</html>
