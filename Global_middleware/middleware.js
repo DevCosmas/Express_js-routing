@@ -4,6 +4,7 @@ const userPath=path.join( "./","Users",'db',"user.json")
 
 const requestBody = (req, res, next) => {
     if (!req.body) {
+        console.log(req.body)
         res.status(401).json({
             Data: null,
             Message: 'error in request body. User denied access!'

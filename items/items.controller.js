@@ -7,7 +7,7 @@ console.log(dataPath)
 function getAll(req, res) {
   fs.readFile(dataPath, 'utf-8', (err, data) => {
     if (err) {
-      console.log('error in reading file');
+      res.status(404).json({ message: "can't read file" })
     }
     const dataObj = JSON.parse(data);
     res
@@ -35,6 +35,10 @@ function getOne(req, res) {
   });
 }
 
+// function getByVariables(req,res){
+//   const {name,price,size}=req.params
+//   console.log(name,price,size) 
+// }
 // post data with the POST method //
 function postData(req, res) {
   const body = [];
@@ -131,6 +135,7 @@ function deleteData(req, res) {
 module.exports = {
   getAll,
   getOne,
+  // getByVariables,
   postData,
   update,
   deleteData,
