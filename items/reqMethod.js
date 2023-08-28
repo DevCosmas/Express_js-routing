@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const dataPath = path.join(__dirname, 'items.json');
+const dataPath = path.join(__dirname, 'db', 'items.json');
+console.log(dataPath)
 
 // get all items/data with the GET method//
 function getAll(req, res) {

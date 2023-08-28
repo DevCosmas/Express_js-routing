@@ -1,0 +1,25 @@
+[
+    {
+        "username": "cosmas0111",
+        "password": "1117",
+        "api_key": "cosmas0112_1001",
+        "userType": "customer"
+    },
+    {
+        "username": "cosmas0112",
+        "password": "1115",
+        "api_key": "cosmas0112_2115",
+        "user_type": "staff"
+    },
+    {
+        "username": "cosmas0112",
+        "password": "1115",
+        "api_key": "cosmas0112_1115",
+        "user_type": "staff"
+    },
+    {
+        "username": "cosmas0112",
+        "password": "1115",
+        "userType": "customer"
+    }
+]

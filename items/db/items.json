@@ -1,0 +1,62 @@
+[
+    {
+        "Name": "MacOs",
+        "Price": "$5000",
+        "Size": "medium",
+        "id": 2
+    },
+    {
+        "Name": "Hp",
+        "Price": "$850",
+        "Size": "Big",
+        "id": 3
+    },
+    {
+        "Name": "MacOs",
+        "Price": "$2850",
+        "Size": "medium",
+        "id": 4
+    },
+    {
+        "Name": "MacOs",
+        "Price": "$2850",
+        "Size": "medium",
+        "id": 5
+    },
+    {
+        "Name": "MacOs",
+        "Price": "$2850",
+        "Size": "medium",
+        "id": 6
+    },
+    {
+        "Name": "MacOs",
+        "Price": "$20000",
+        "Size": "medium",
+        "id": 7
+    },
+    {
+        "Name": "MacOs",
+        "Price": "$2850",
+        "Size": "medium",
+        "id": 8
+    },
+    {
+        "Name": "MacOs",
+        "Price": "$2850",
+        "Size": "medium",
+        "id": 9
+    },
+    {
+        "Name": "Toshiba",
+        "Price": "$850",
+        "Size": "Small",
+        "id": 10
+    },
+    {
+        "Name": "Lenovo",
+        "Price": "$850",
+        "Size": "Biga",
+        "id": 11
+    }
+]
