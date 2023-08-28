@@ -1,7 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const userPath = path.join("C:", "Users", "USER", "Desktop", "expresjs assignment", "Users", "db", "user.json")
-console.log(userPath)
+const userPath=path.join( "./","Users",'db',"user.json")
 
 const requestBody = (req, res, next) => {
     if (!req.body) {
@@ -48,12 +47,9 @@ const apiKeys = (req, res, next) => {
         if (err) { res.status(404).json({ Message: 'can not read file' }) }
         const dataObj = JSON.parse(data)
         const findUser = dataObj.find((el) => el.api_key === api_key)
-        // 
         if (!findUser && !findUser.api_key) { res.status(404).json({ Message: 'cannot find user data. Put in the right api_key' }) }
-        else {
-
-            next()
-        }
+        else { next()}
+       
     })
 }
 const checkStaff = (req, res, next) => {
