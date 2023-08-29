@@ -21,5 +21,29 @@
         "username": "cosmas0112",
         "password": "1115",
         "userType": "customer"
+    },
+    {
+        "username": "cosmas0000",
+        "password": "0000",
+        "api_key": "cosmas0000_0000",
+        "user_type": "staff"
+    },
+    {
+        "username": "cosmas0022",
+        "password": "0022",
+        "userType": "customer",
+        "api_key": "cosmas0022_0022"
+    },
+    {
+        "username": "cosmas0022",
+        "password": "0022",
+        "userType": "customer",
+        "api_key": "cosmas0022_0022"
+    },
+    {
+        "username": "cosmas0022",
+        "password": "0022",
+        "userType": "customer",
+        "api_key": "cosmas0022_0022"
     }
 ]

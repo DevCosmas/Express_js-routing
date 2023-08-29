@@ -35,4 +35,4 @@ function createUser(req, res) {
         })
     })
 }
-module.exports = createUser
+module.exports ={createUser}
