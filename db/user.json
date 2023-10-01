@@ -1,0 +1,34 @@
+[
+    {
+        "username": "Devcosmas",
+        "password": "test1234",
+        "role": "staff",
+        "isAdmin": true,
+        "api_key": "Devcosmas_test1234"
+    },
+    {
+        "username": "Dcozy",
+        "password": "test123",
+        "role": "customer",
+        "isAdmin": false
+    },
+    {
+        "username": "nazzy",
+        "password": "nazzy123",
+        "role": "customer",
+        "isAdmin": false
+    },
+    {
+        "username": "john doe",
+        "password": "pass123",
+        "role": "customer",
+        "isAdmin": false
+    },
+    {
+        "username": "john bull",
+        "password": "pass1234",
+        "role": "staff",
+        "isAdmin": true,
+        "api_key": "john bull_pass1234"
+    }
+]

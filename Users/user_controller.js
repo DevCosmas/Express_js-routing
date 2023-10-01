@@ -1,38 +1,31 @@
 const fs = require('fs')
 const path = require('path')
-const userPath = path.join(__dirname, "db", "user.json")
+const userPath = path.join("C:", "Users", "USER", "Desktop", "expresjs assignment", "db", "user.json")
 
-function createUser(req, res) {
-    const body = []
-    req.on('data', (chunk) => {
-        body.push(chunk)
-    })
-    req.on('end', () => {
-        const bodyBuffer = Buffer.concat(body).toString()
-        const bufferObj = JSON.parse(bodyBuffer)
-        const userType = bufferObj.username.split(':')[0].toLowerCase()
-        if (userType === 'staff') {
-            bufferObj.api_key = `${bufferObj.username}_${bufferObj.password}`.split(':')[1]
-            const username = bufferObj.username.split(':')[1]
-            bufferObj.username = username
-            bufferObj.user_type = "staff"
-        } else {
-            bufferObj.username.split(':')[1]
-            bufferObj.userType = "customer"
-            bufferObj.api_key = `${bufferObj.username}_${bufferObj.password}`
-        }
+async function signUp(req, res) {
 
-        fs.readFile(userPath, 'utf8', (err, data) => {
-            if (err) console.log('cannot read file')
-            const dataObj = JSON.parse(data)
-            dataObj.push(bufferObj)
-            fs.writeFile(userPath, JSON.stringify(dataObj), (err) => {
-                if (err) {
-                    res.status(500).json({ message: "can't write file" });
-                }
-                res.status(200).json({ Message: 'succes' });
-            });
-        })
+    const body = await req.body;
+
+    if (body.role === "staff") {
+        body.isAdmin = true
+        body.api_key = `${body.username}_${body.password}`;
+    }
+
+    else {
+        body.isAdmin = false
+    }
+
+    fs.readFile(userPath, 'utf8', async (err, data) => {
+        if (err) console.log('cannot read file')
+        const JsonObj = await JSON.parse(data)
+        JsonObj.push(body)
+        fs.writeFile(userPath, JSON.stringify(JsonObj), (err) => {
+            if (err) {
+                res.status(500).json({ result: "Fail", message: "cannot write file to db" });
+            }
+            res.status(201).json({ result: "Success", Message: 'You have succesfully signed up', userProfile: body });
+        });
     })
 }
-module.exports ={createUser}
+
+module.exports = { signUp }
