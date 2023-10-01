@@ -12,11 +12,19 @@
         "role": "customer",
         "isAdmin": false
     },
+
     {
         "username": "nazzy",
         "password": "nazzy123",
         "role": "customer",
         "isAdmin": false
+    },
+    {
+        "username": "john_test",
+        "password": "pass",
+        "role": "staff",
+        "isAdmin": true,
+        "api_key": "john_test_pass"
     },
     {
         "username": "john doe",
@@ -25,10 +33,10 @@
         "isAdmin": false
     },
     {
-        "username": "john bull",
-        "password": "pass1234",
+        "username": "john",
+        "password": "pass",
         "role": "staff",
         "isAdmin": true,
-        "api_key": "john bull_pass1234"
+        "api_key": "john_pass"
     }
 ]
