@@ -1,18 +1,17 @@
 const fs = require('fs')
 const path = require('path')
-const userPath=path.join( "./","Users",'db',"user.json")
+const userPath = path.join("C:", "Users", "USER", "Desktop", "expresjs assignment", "db", "user.json")
 
 const requestBody = (req, res, next) => {
+
     if (!req.body) {
-        console.log(req.body)
         res.status(401).json({
             Data: null,
             Message: 'error in request body. User denied access!'
-        })
+        });
+
     }
-   else{
     next()
-   }
 }
 const basicAuth = (req, res, next) => {
     const authHeader = req.headers.authorization
@@ -28,10 +27,9 @@ const basicAuth = (req, res, next) => {
         const dataObj = JSON.parse(data)
         const findUser = dataObj.find((el) => el.username === username && el.password === password)
         if (!findUser) { res.status(404).json({ Message: 'cannot find user data. invalid username or password' }) }
-        else {
 
-            next()
-        }
+        next()
+
     })
 
 
@@ -49,8 +47,8 @@ const apiKeys = (req, res, next) => {
         const dataObj = JSON.parse(data)
         const findUser = dataObj.find((el) => el.api_key === api_key)
         if (!findUser && !findUser.api_key) { res.status(404).json({ Message: 'cannot find user data. Put in the right api_key' }) }
-        else { next()}
-       
+        next()
+
     })
 }
 const checkStaff = (req, res, next) => {
@@ -64,7 +62,7 @@ const checkStaff = (req, res, next) => {
         if (err) { res.status(404).json({ Message: 'Can not read file' }) }
         const dataObj = JSON.parse(data)
         const findUser = dataObj.find((el) => el.api_key === api_key)
-        if ( findUser.user_type === 'staff') {
+        if (findUser.user_type === 'staff') {
             console.log(findUser.user_type)
             next()
         }

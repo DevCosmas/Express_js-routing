@@ -3,9 +3,15 @@ const Auth = require('../Global_middleware/middleware')
 const item_controller = require('./items.controller')
 const router = express.Router()
 
-router.get('/get', Auth.apiKeys, item_controller.getAll)
-router.get('/get/:id', Auth.basicAuth, item_controller.getOne)
-router.post('/post', Auth.checkStaff, item_controller.postData)
-router.patch('/patch/:id', Auth.checkStaff, item_controller.update)
-router.delete('/delete/:id', Auth.basicAuth,item_controller.deleteData)
-module.exports=router
+router.use(express.json())
+
+
+router.get('/items',Auth.basicAuth, item_controller.getAll)
+router.get('/items/:id',Auth.basicAuth, item_controller.getOneItem)
+
+// only user that are staff are allowed to use this resources
+router.use(Auth.checkStaff)
+router.post('/create_items', Auth.requestBody, item_controller.createItem)
+router.patch('/update_items/:id', Auth.requestBody, item_controller.updateItem)
+router.delete('/delete_item/:id', item_controller.deleteItem)
+module.exports = router

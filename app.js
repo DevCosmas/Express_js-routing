@@ -8,8 +8,8 @@ const PORT = 3000;
 const HOSTNAME = 'localhost';
 
 app.use('/static', express.static(path.join(__dirname, 'public')));
-app.use('/items',itemRouter)
-app.use('/User',userRouter)
+app.use('/api',itemRouter)
+app.use('/api',userRouter)
 
 
 app.listen(PORT, HOSTNAME, () => {
