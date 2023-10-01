@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const userPath = path.join("C:", "Users", "USER", "Desktop", "expresjs assignment", "db", "user.json")
 
-async function createUser (req, res) {
+async function signUp(req, res) {
 
     const body = await req.body;
 
@@ -21,11 +21,11 @@ async function createUser (req, res) {
         JsonObj.push(body)
         fs.writeFile(userPath, JSON.stringify(JsonObj), (err) => {
             if (err) {
-                res.status(500).json({result:"Fail", message: "cannot write file to db" });
+                res.status(500).json({ result: "Fail", message: "cannot write file to db" });
             }
-            res.status(201).json({result:"Success", Message: 'You have succesfully signed up', userProfile:body });
+            res.status(201).json({ result: "Success", Message: 'You have succesfully signed up', userProfile: body });
         });
     })
 }
 
-module.exports = { createUser }
+module.exports = { signUp }

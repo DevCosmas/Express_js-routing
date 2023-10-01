@@ -7,7 +7,7 @@ const dataPath = path.join("C:","Users","USER","Desktop","expresjs assignment","
 function getAll(req, res) {
   fs.readFile(dataPath, 'utf-8', (err, data) => {
     if (err) {
-      res.status(404).json({ message: "can't read file" })
+      res.status(500).json({ message: "server error, file path not found" })
     }
     const dataObj = JSON.parse(data);
     res
@@ -22,7 +22,7 @@ function getOneItem(req, res) {
 
   fs.readFile(dataPath, 'utf8', (err, data) => {
     if (err) {
-      res.status(500).json({ message: "server error, file path nbot found" })
+      res.status(500).json({ message: "server error, file path not found" })
     }
     const dataObj = JSON.parse(data);
     const objIndex = dataObj.findIndex((el) => el.id === id * 1);
@@ -82,7 +82,7 @@ function updateItem(req, res) {
       if (err) {
         res.status(500).json({ result: 'Server Error', Message: 'fail to locate filePath' });
       } else {
-        res.status(200).json({ result: 'Success', Message: 'Item has been updated succesfully', Data: updatedItem });
+        res.status(201).json({ result: 'Success', Message: 'Item has been updated succesfully', Data: updatedItem });
       }
     });
   });
@@ -96,7 +96,7 @@ function deleteItem(req, res) {
   const { id } = req.params;
   fs.readFile(dataPath, 'utf8', (err, data) => {
     if (err) {
-      console.log('file not read');
+      res.status(500).json({ message: "fail to read filePath" });
     }
     const jsonObj = JSON.parse(data);
     const jsonIndex = jsonObj.findIndex((el) => el.id === id * 1);
