@@ -3,7 +3,7 @@
 # API DOCUMENTATION AND TESTING
 Click on the link below to read full documentation. And automatically test api with Postman client.
 
-Docs link :https://documenter.getpostman.com/view/28599121/2s9YC5xXa9
+Docs link :https://documenter.getpostman.com/view/28599121/2s9YJaZQCC
 # TECH STACK
 Nodejs
 
@@ -23,8 +23,10 @@ Nodejs
 # HOW TO RUN PROJECT 
 * Clone The repo and cd into your base folder
 
-   ```git clone https://github.com/DevCosmas/Express_js-routing.git```
-  ```cd <base folder>```
+   ```git clone https://github.com/DevCosmas/Express_js-routing.git``` 
+
+   
+   ```cd <base folder>```
   
 * Run "npm install" to install all the dependencies
 
