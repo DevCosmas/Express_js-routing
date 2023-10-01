@@ -56,13 +56,13 @@ const checkStaff = async (req, res, next) => {
     const authHeader = await req.headers.authorization
 
     if (!authHeader) { res.status(401).json({ Message: 'Authentication failed!' }) }
-    const api_key = await authHeader.split(' ')[1]
+    const authKey = await authHeader.split(' ')[1].toString()
 
     fs.readFile(userPath, 'utf8', async(err, data) => {
         if (err) { res.status(404).json({ Message: 'Can not read file' }) }
         const dataObj =  await JSON.parse(data)
-        const findUser =  await dataObj.find((el) => el.api_key === api_key)
-        if (findUser.isAdmin === true) {
+        const findUser =  await dataObj.find((el) => el.api_key === authKey)
+        if (findUser && findUser.isAdmin ===true) {
             console.log(findUser)
             next()
         }
