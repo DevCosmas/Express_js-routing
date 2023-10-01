@@ -1,19 +1,32 @@
 const fs = require('fs');
 const path = require('path');
-const dataPath = path.join("C:","Users","USER","Desktop","expresjs assignment","db", "items.json")
+const dataPath = path.join("C:", "Users", "USER", "Desktop", "expresjs assignment", "db", "items.json")
 
 
 // get all items with the GET method//
 function getAll(req, res) {
+
+  const { name, price, size } = req.query
+
+
   fs.readFile(dataPath, 'utf-8', (err, data) => {
     if (err) {
       res.status(500).json({ message: "server error, file path not found" })
     }
     const dataObj = JSON.parse(data);
-    res
-      .status(200)
-      .json({ Message: 'success', Size: dataObj.length, Data: dataObj });
-  });
+
+    if (name || price || size) {
+      const filteredItem = dataObj.filter(el => {
+        return (name && gel.name === name) ||
+          (price && el.price === parseInt(price)) ||
+          (size && el.size === size);
+      });
+
+      return res.status(200).json({ Message: 'success', Size: filteredItem.length, items: filteredData });
+    }
+
+    res.status(200).json({ Message: 'success', Size: dataObj.length, items: dataObj })
+  })
 }
 
 // get only one item using the GET method//
@@ -52,7 +65,7 @@ function createItem(req, res) {
       if (err) {
         res.status(500).json({ Message: 'fail to locate filePath' });
       } else {
-        res.status(201).json({ Message: 'new item has been created', Size: jsonObj.length, Data: jsonObj });
+        res.status(201).json({ Message: 'new item has been created', Size: jsonObj.length, items: jsonObj });
       }
     });
 
@@ -82,7 +95,7 @@ function updateItem(req, res) {
       if (err) {
         res.status(500).json({ result: 'Server Error', Message: 'fail to locate filePath' });
       } else {
-        res.status(201).json({ result: 'Success', Message: 'Item has been updated succesfully', Data: updatedItem });
+        res.status(201).json({ result: 'Success', Message: 'Item has been updated succesfully', updatedItem });
       }
     });
   });
@@ -118,7 +131,7 @@ function deleteItem(req, res) {
 module.exports = {
   getAll,
   getOneItem,
- createItem,
+  createItem,
   updateItem,
   deleteItem,
 };

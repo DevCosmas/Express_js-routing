@@ -1,56 +1,56 @@
 [
     {
-        "Name": "MacOs",
-        "Price": 5000,
-        "Size": "medium",
+        "name": "MacOs",
+        "price": 5000,
+        "size": "medium",
         "id": 2
     },
     {
-        "Name": "Hp",
-        "Price": 850,
-        "Size": "Big",
+        "name": "Hp",
+        "price": 850,
+        "size": "Big",
         "id": 3
     },
     {
-        "Name": "MacOs",
-        "Price": 2850,
-        "Size": "medium",
+        "name": "MacOs",
+        "price": 2850,
+        "size": "medium",
         "id": 4
     },
     {
-        "Name": "Toshiba",
-        "Price": "$850",
-        "Size": "Small",
+        "name": "Toshiba",
+        "price": 850,
+        "size": "Small",
         "id": 10
     },
     {
-        "Name": "Lenovo",
-        "Price": 850,
-        "Size": "Big",
+        "name": "Lenovo",
+        "price": 850,
+        "size": "Big",
         "id": 11
     },
     {
-        "Name": "ipad",
-        "Price": 2850,
-        "Size": "small",
+        "name": "ipad",
+        "price": 2850,
+        "size": "small",
         "id": 12
     },
     {
-        "Name": "lenovo curve 3",
-        "Price": 2500,
-        "Size": "big",
+        "name": "lenovo curve 3",
+        "price": 2500,
+        "size": "big",
         "id": 13
     },
     {
-        "Name": "lenovo curve ",
-        "Price": 1500,
-        "Size": "big",
+        "name": "lenovo curve ",
+        "price": 1500,
+        "size": "big",
         "id": 14
     },
     {
-        "Name": "lenovo curve 5 ",
-        "Price": 1500,
-        "Size": "big",
+        "name": "lenovo curve 5 ",
+        "price": 1500,
+        "size": "big",
         "id": 15
     }
 ]
